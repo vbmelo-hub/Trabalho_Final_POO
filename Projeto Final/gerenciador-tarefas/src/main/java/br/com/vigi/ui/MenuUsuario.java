@@ -190,7 +190,7 @@ public class MenuUsuario {
         }
         System.out.print("\nDigite o número da tarefa que deseja concluir: ");
         try {
-            int indice = Integer.parseInt(console.readLine()); // lê o número que o usuário digitou
+            int indice = Integer.parseInt(console.readLine()); // lê o número que o usuário digitou como indice a ser usado 
             if (tarefaServico.concluirTarefa(indice)) { // tenta concluir a tarefa lá no serviço
                 System.out.println("Tarefa marcada como concluída com sucesso!"); // se o serviço retornar true, deu certo
             } else {

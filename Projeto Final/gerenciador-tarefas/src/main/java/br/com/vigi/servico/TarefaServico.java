@@ -61,10 +61,10 @@ public class TarefaServico {
         List<Tarefa> todas = tarefaDao.listarTodas(); // Cria uma nova lista que armazena todas as tarefas existnetes na persistencia
         List<Tarefa> tarefasConcluidas = new ArrayList<>();
         for (Tarefa tarefa : todas) {
-            // Se a tarefa ESTIVER concluída...
-            if (tarefa.isConcluida()) {
-                // ...adiciona ela na lista de concluídas.
-                tarefasConcluidas.add(tarefa);
+            
+            if (tarefa.isConcluida()) { // Se a tarefa ESTIVER concluída...
+                
+                tarefasConcluidas.add(tarefa); // ...adiciona ela na lista de concluídas
             }
         }
         return tarefasConcluidas;
@@ -73,30 +73,29 @@ public class TarefaServico {
     // --- MÉTODO DE AÇÃO ---
 
     public boolean concluirTarefa(int indice) {
-        // Pega a lista atual de tarefas pendentes para saber qual tarefa o índice representa.
-        List<Tarefa> pendentes = listarTarefasPendentes();
-        // Verifica se o índice que o usuário digitou é válido.
-        if (indice >= 0 && indice < pendentes.size()) {
-            // Pega a tarefa correta da lista.
-            Tarefa tarefaParaConcluir = pendentes.get(indice);
-            // Chama o método do próprio objeto para mudar seu estado para 'concluída'.
-            tarefaParaConcluir.marcarConcluida();
-            return true; // Retorna sucesso.
+        
+        List<Tarefa> pendentes = listarTarefasPendentes(); // Pega a lista atual de tarefas pendentes para saber qual tarefa o índice representa
+        
+        if (indice >= 0 && indice < pendentes.size()) { // Verifica se o índice que o usuário digitou é válido
+            
+            Tarefa tarefaParaConcluir = pendentes.get(indice); // Pega a tarefa correta da lista
+            
+            tarefaParaConcluir.marcarConcluida(); // Chama o método do próprio objeto para mudar seu estado para 'concluída'
+            return true; // Retorna sucesso
         }
-        return false; // Retorna falha se o índice for inválido.
+        return false; // Retorna falha se o índice for inválido
     }
 
     // --- MÉTODO DE BUSCA ---
     
-    // Busca tarefas pela data de AGENDAMENTO que você pediu.
-    public List<Tarefa> buscarTarefasPorDataDeAgendamento(LocalDate data) {
+    public List<Tarefa> buscarTarefasPorDataDeAgendamento(LocalDate data) { // Busca tarefas pela data de AGENDAMENTO que o usuario pedir
         List<Tarefa> todas = tarefaDao.listarTodas();
         List<Tarefa> tarefasEncontradas = new ArrayList<>();
         for (Tarefa tarefa : todas) {
-            // Se a data de agendamento da tarefa for igual à data buscada...
-            if (tarefa.getDataAgendamento() != null && tarefa.getDataAgendamento().equals(data)) {
-                // ...adiciona na lista de resultados.
-                tarefasEncontradas.add(tarefa);
+            
+            if (tarefa.getDataAgendamento() != null && tarefa.getDataAgendamento().equals(data)) { // Se a data de agendamento da tarefa for igual à data buscada...
+                
+                tarefasEncontradas.add(tarefa); // ...adiciona na lista de resultados
             }
         }
         return tarefasEncontradas;
