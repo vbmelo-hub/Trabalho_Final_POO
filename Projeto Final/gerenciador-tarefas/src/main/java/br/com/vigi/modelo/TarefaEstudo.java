@@ -23,6 +23,6 @@ public class TarefaEstudo extends Tarefa {
 
     @Override
     public String exibirDetalhes() {
-        return "[Estudo] " + getTitulo() + " (Disciplina: " + this.disciplina + ") - Entrega: " + formatarData(this.dataEntrega); //aqui usamos o método protected herdado da classe mãe, que faz a conversão do formato da data pra dia, mês e ano
+        return "[Estudo] " + getTitulo() + ": " + getDescricao() + " (Disciplina: " + this.disciplina +") - Entrega: " + formatarData(this.dataEntrega); //aqui usamos o método protected herdado da classe mãe, que faz a conversão do formato da data pra dia, mês e ano
     }
 }

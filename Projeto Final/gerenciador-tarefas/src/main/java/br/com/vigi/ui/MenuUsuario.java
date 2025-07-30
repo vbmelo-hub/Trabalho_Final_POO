@@ -52,13 +52,13 @@ public class MenuUsuario {
 
     // Apenas imprime o menu de opções na tela
     private void exibirMenuPrincipal() {
-        System.out.println("\n--- Gerenciador de Tarefas ---");
+        System.out.println("\n===== Gerenciador de Tarefas =====\n");
         System.out.println("1. Adicionar Nova Tarefa");
         System.out.println("2. Listar Tarefas Pendentes");
         System.out.println("3. Listar Tarefas Concluídas");
         System.out.println("4. Marcar Tarefa como Concluída");
         System.out.println("5. Buscar Tarefas por Data de Agendamento");
-        System.out.println("0. Sair");
+        System.out.println("0. Sair\n");
         System.out.print("Escolha uma opção: ");
     }
 
@@ -113,7 +113,7 @@ public class MenuUsuario {
     
     // Guia o usuário pra adicionar uma tarefa nova
     private void adicionarNovaTarefaUI() {
-        System.out.println("\n--- Adicionar Nova Tarefa ---");
+        System.out.println("\n=== Adicionar Nova Tarefa ===");
         System.out.print("Para qual data deseja agendar esta tarefa? (DD/MM/AAAA, deixe em branco para hoje): ");
         String dataInput = console.readLine(); // lê a data como texto
         LocalDate dataAgendamento;
@@ -158,7 +158,7 @@ public class MenuUsuario {
     
     // Mostra as tarefas pendentes
     private void listarTarefasPendentesUI() {
-        System.out.println("\n--- Tarefas Pendentes ---");
+        System.out.println("\n=== Tarefas Pendentes ===");
         List<Tarefa> pendentes = tarefaServico.listarTarefasPendentes(); // pede a lista de pendentes pro serviço
         if (pendentes.isEmpty()) { // se a lista estiver vazia
             System.out.println("Nenhuma tarefa pendente.");
@@ -171,7 +171,7 @@ public class MenuUsuario {
 
     // Mostra as tarefas que já foram concluídas
     private void listarTarefasConcluidasUI() {
-        System.out.println("\n--- Tarefas Concluídas ---");
+        System.out.println("\n=== Tarefas Concluídas ===");
         List<Tarefa> concluidas = tarefaServico.listarTarefasConcluidas(); // pede a lista de concluídas pro serviço
         if (concluidas.isEmpty()) {
             System.out.println("Nenhuma tarefa foi concluída ainda.");
@@ -206,7 +206,7 @@ public class MenuUsuario {
         System.out.print("Digite a data de agendamento que deseja buscar (DD/MM/AAAA): ");
         LocalDate dataBusca = lerData(); // usa nosso método pra ler uma data válida
 
-        System.out.println("\n--- Tarefas agendadas para " + dataBusca.format(formatadorData) + " ---");
+        System.out.println("\n=== Tarefas agendadas para " + dataBusca.format(formatadorData) + " ===");
         List<Tarefa> encontradas = tarefaServico.buscarTarefasPorDataDeAgendamento(dataBusca); // pede pro serviço buscar as tarefas daquela data
 
         if (encontradas.isEmpty()) { // se não achar nada

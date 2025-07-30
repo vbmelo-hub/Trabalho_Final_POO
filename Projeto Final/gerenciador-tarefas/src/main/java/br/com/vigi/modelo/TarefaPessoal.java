@@ -25,7 +25,7 @@ public class TarefaPessoal extends Tarefa {
 
     @Override
     public String exibirDetalhes() {
-        String detalhes = "[Pessoal] " + getTitulo() + " (Categoria: " + this.categoria + ")"; //define uma string pra armazenar a concatenação das informações, isso possibilita que no if abaixo, ela seja usada novamente, caso entre no if
+         String detalhes = "[Pessoal] " + getTitulo() + ": " + getDescricao() + " (Categoria: " + this.categoria + ")"; //define uma string pra armazenar a concatenação das informações, isso possibilita que no if abaixo, ela seja usada novamente, caso entre no if
 
         if (prazo.isPresent()) {
             LocalDate dataDoPrazo = prazo.get();

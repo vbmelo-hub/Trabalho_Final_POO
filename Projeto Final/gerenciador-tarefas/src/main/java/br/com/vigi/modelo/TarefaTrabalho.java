@@ -25,7 +25,7 @@ public class TarefaTrabalho extends Tarefa {
 
     @Override
     public String exibirDetalhes() {
-        String detalhes = "[Trabalho] " + getTitulo() + " - Prazo: " + formatarData(prazo); //define uma string pra armazenar a concatenação das informações, isso possibilita que no if abaixo, ela seja usada novamente, caso entre no if. Além disso, utiliza o método protected de Tarefa.java para formatar a data
+        String detalhes = "[Trabalho] " + getTitulo() + ": " + getDescricao() + " - Prazo: " + formatarData(prazo); //define uma string pra armazenar a concatenação das informações, isso possibilita que no if abaixo, ela seja usada novamente, caso entre no if. Além disso, utiliza o método protected de Tarefa.java para formatar a data
 
         if (projeto.isPresent()) {
             detalhes = detalhes + " (Projeto: " + projeto.get() + ")";
