@@ -1,0 +1,8 @@
+br\com\vigi\modelo\Tarefa.class
+br\com\vigi\modelo\TarefaTrabalho.class
+br\com\vigi\modelo\TarefaPessoal.class
+br\com\vigi\ui\MenuUsuario.class
+br\com\vigi\modelo\TarefaEstudo.class
+br\com\vigi\persistencia\TarefaDao.class
+br\com\vigi\servico\TarefaServico.class
+br\com\vigi\aplicacao\Main.class
