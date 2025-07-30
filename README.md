@@ -14,7 +14,7 @@ O projeto está estruturado como um projeto Maven, com classes Java organizadas 
 - `TarefaDao.java`: repositório em memória para tarefas.
 
 > ⚠️ **Pré-requisitos**:
-> - Java JDK 24
+> - Java JDK 23
 > - Apache Maven 3.9.11 ou superior
 > - Variáveis de ambiente `JAVA_HOME` e `MAVEN_HOME` corretamente configuradas
 
@@ -41,11 +41,8 @@ mvn clean compile
 ### 4. Execute a aplicação
 
 ```bash
-mvn exec:java -Dexec.mainClass="br.com.vigi.aplicacao.Main"
+mvn exec:java
 ```
-
-> Substitua o nome da classe principal, se necessário, de acordo com a estrutura do seu projeto.
-
 ---
 
 ## 📌 Funcionalidades Disponíveis
